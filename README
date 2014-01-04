@@ -1,0 +1,21 @@
+NAME
+    ppp - This is the executable to App::pandoc::preprocess
+
+VERSION
+    version 0.1.0_1
+
+SYNOPSIS
+    App-pandoc-preprocess / ppp lets use dot/ditaa/rdfdot in pandoc code
+    blocks.
+
+    Extremely similar to <https://github.com/nichtich/ditaa-markdown>
+
+AUTHOR
+    DBR <dbr@cpan.org>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2014 by DBR.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
