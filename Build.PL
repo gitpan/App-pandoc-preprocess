@@ -13,12 +13,12 @@ my %module_build_args = (
     "ExtUtils::MakeMaker" => "6.30",
     "Module::Build" => "0.3601"
   },
-  "dist_abstract" => "typeset pandoc documents with document-specific, default options",
+  "dist_abstract" => "Preprocess Pandoc before Processing Pandoc",
   "dist_author" => [
     "DBR <dbr\@cpan.org>"
   ],
   "dist_name" => "App-pandoc-preprocess",
-  "dist_version" => "0.1.0_1",
+  "dist_version" => "0.2.0",
   "license" => "perl",
   "module_name" => "App::pandoc::preprocess",
   "recommends" => {},
@@ -28,7 +28,10 @@ my %module_build_args = (
     "FindBin" => 0,
     "Moo" => 0,
     "MooX::Options" => 0,
+    "MooX::Types::MooseLike::Base" => 0,
+    "Path::Class" => 0,
     "lib" => 0,
+    "namespace::clean" => 0,
     "perl" => "v5.14.0",
     "strict" => 0,
     "warnings" => 0

@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "typeset pandoc documents with document-specific, default options",
+  "ABSTRACT" => "Preprocess Pandoc before Processing Pandoc",
   "AUTHOR" => "DBR <dbr\@cpan.org>",
   "BUILD_REQUIRES" => {
     "Module::Build" => "0.3601"
@@ -30,7 +30,10 @@ my %WriteMakefileArgs = (
     "FindBin" => 0,
     "Moo" => 0,
     "MooX::Options" => 0,
+    "MooX::Types::MooseLike::Base" => 0,
+    "Path::Class" => 0,
     "lib" => 0,
+    "namespace::clean" => 0,
     "strict" => 0,
     "warnings" => 0
   },
@@ -44,7 +47,7 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.94",
     "Test::UseAllModules" => 0
   },
-  "VERSION" => "0.1.0_1",
+  "VERSION" => "0.2.0",
   "test" => {
     "TESTS" => "t/*.t"
   }

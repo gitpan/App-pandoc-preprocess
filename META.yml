@@ -1,5 +1,5 @@
 ---
-abstract: 'typeset pandoc documents with document-specific, default options'
+abstract: 'Preprocess Pandoc before Processing Pandoc'
 author:
   - 'DBR <dbr@cpan.org>'
 build_requires:
@@ -28,12 +28,15 @@ requires:
   FindBin: 0
   Moo: 0
   MooX::Options: 0
+  MooX::Types::MooseLike::Base: 0
+  Path::Class: 0
   lib: 0
+  namespace::clean: 0
   perl: v5.14.0
   strict: 0
   warnings: 0
 resources:
   homepage: https://github.com/xdbr/p5-App-pandoc-preprocess
   repository: https://github.com/xdbr/p5-App-pandoc-preprocess.git
-version: 0.1.0_1
+version: 0.2.0
 x_authority: cpan:DBR

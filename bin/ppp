@@ -6,12 +6,8 @@
 use v5.14;
 use strict;
 use warnings;
-
 use FindBin;
-
 use lib "$FindBin::Bin/../lib";
-
-use Data::Printer;
 
 use App::pandoc::preprocess;
 
@@ -19,7 +15,7 @@ BEGIN {
   # TODO: check available: dot, ditaa, rdfdot
 }
 
-App::pandoc::preprocess::main;
+App::pandoc::preprocess->new_with_options->run
 
 __END__
 
@@ -31,15 +27,13 @@ ppp - This is the executable to App::pandoc::preprocess
 
 =head1 VERSION
 
-version 0.1.0_1
+version 0.2.0
 
 =head1 SYNOPSIS
 
 App-pandoc-preprocess E<sol> ppp lets use dotE<sol>ditaaE<sol>rdfdot in pandoc code blocks.
 
 B<Extremely> similar to E<lt>https:E<sol>E<sol>github.comE<sol>nichtichE<sol>ditaa-markdownE<gt>
-
-=cut
 
 =head1 AUTHOR
 
