@@ -1,10 +1,4 @@
 package App::pandoc::preprocess;
-BEGIN {
-  $App::pandoc::preprocess::AUTHORITY = 'cpan:DBR';
-}
-{
-  $App::pandoc::preprocess::VERSION = '0.2.0';
-}
 
 #  PODNAME: App::pandoc::preprocess
 # ABSTRACT: Preprocess Pandoc before Processing Pandoc
@@ -114,28 +108,3 @@ sub run {
 }
 
 1;
-
-__END__
-
-=pod
-
-=head1 NAME
-
-App::pandoc::preprocess - Preprocess Pandoc before Processing Pandoc
-
-=head1 VERSION
-
-version 0.2.0
-
-=head1 AUTHOR
-
-DBR <dbr@cpan.org>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is copyright (c) 2014 by DBR.
-
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
-
-=cut
