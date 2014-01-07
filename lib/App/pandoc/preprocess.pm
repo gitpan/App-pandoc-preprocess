@@ -1,4 +1,10 @@
 package App::pandoc::preprocess;
+BEGIN {
+  $App::pandoc::preprocess::AUTHORITY = 'cpan:DBR';
+}
+{
+  $App::pandoc::preprocess::VERSION = '0.2.4';
+}
 
 #  PODNAME: App::pandoc::preprocess
 # ABSTRACT: Preprocess Pandoc before Processing Pandoc
@@ -38,6 +44,25 @@ option downscale_image => (
   doc => 'downscale the image',
 );
 
+has encoding_check => (
+  is => 'ro',
+  isa => Num,
+  default => sub {
+    `grep -c file.encoding \$(which ditaa)` > 0 or die q{
+      Your ditaa executable
+        a) could not be found in your $PATH or
+        b) it lacks an option called '-Dfile.encoding=UTF-8' or
+        c) your\'re lacking java altogehter
+
+      Please add an executable called `ditaa` with the following content to your $PATH:
+        #!/bin/sh
+        java -Dfile.encoding=UTF-8 -jar /path/to/ditaa_XYZ.jar
+
+      Abort.
+    }
+  }
+);
+
 has preprocess_file => (
   is => 'rw',
   isa => Object #'App::pandoc::preprocess::File',
@@ -49,9 +74,9 @@ has matchers => (
   default => sub {
     +{
       begin_of_line          => qr/^/sm,
-      codeblock_begin        => qr/^~+/sm,
+      codeblock_begin        => qr/~{4,}/sm,
       codeblock_content      => qr/.*?/sm,
-      codeblock_end          => qr/^~+/sm,
+      codeblock_end          => qr/~{4,}/sm,
       format_specification   => qr/(?:dot|ditaa|rdfdot)/sm,
       random_stuff_nongreedy => qr/.*?/sm,
       possibly_spaces        => qr/\s*/sm,
@@ -76,7 +101,7 @@ sub _build_matcher {
         @{[$self->matchers->{random_stuff_nongreedy}]}
       \}
       @{[$self->matchers->{random_stuff_nongreedy}]}
-      @{[$self->matchers->{begin_of_line}]}(?<content> @{[$self->matchers->{codeblock_content}]} )
+      (?<content> @{[$self->matchers->{codeblock_content}]} )
       @{[$self->matchers->{codeblock_end}]}
     )
   /x;
@@ -108,3 +133,28 @@ sub run {
 }
 
 1;
+
+__END__
+
+=pod
+
+=head1 NAME
+
+App::pandoc::preprocess - Preprocess Pandoc before Processing Pandoc
+
+=head1 VERSION
+
+version 0.2.4
+
+=head1 AUTHOR
+
+DBR <dbr@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2014 by DBR.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut

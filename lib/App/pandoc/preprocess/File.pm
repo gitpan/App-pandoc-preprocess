@@ -1,4 +1,10 @@
 package App::pandoc::preprocess::File;
+BEGIN {
+  $App::pandoc::preprocess::File::AUTHORITY = 'cpan:DBR';
+}
+{
+  $App::pandoc::preprocess::File::VERSION = '0.2.4';
+}
 
 #  PODNAME: App::pandoc::preprocess::File
 # ABSTRACT: Internal class representing a file
@@ -64,7 +70,7 @@ has image_generator => (
       },
       ditaa => sub {
         my $self = shift;
-        my $cmd = "ditaa @{[$self->current_image]} @{[$self->output_filename]}"; #`; #--no-shadows --scale 0.4
+        my $cmd = "ditaa -e UTF-8 @{[$self->current_image]} @{[$self->output_filename]}"; #`; #--no-shadows --scale 0.4
         qx/$cmd/;
       },
       rdfdot => sub {
@@ -108,3 +114,28 @@ sub do_downscale_image {
 }
 
 1;
+
+__END__
+
+=pod
+
+=head1 NAME
+
+App::pandoc::preprocess::File - Internal class representing a file
+
+=head1 VERSION
+
+version 0.2.4
+
+=head1 AUTHOR
+
+DBR <dbr@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2014 by DBR.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut

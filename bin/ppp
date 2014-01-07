@@ -19,12 +19,31 @@ App::pandoc::preprocess->new_with_options->run
 
 __END__
 
-=begin wikidoc
+=pod
 
-= SYNOPSIS
+=head1 NAME
 
-App-pandoc-preprocess / ppp lets use dot/ditaa/rdfdot in pandoc code blocks.
+ppp - This is the executable to App::pandoc::preprocess
 
-*Extremely* similar to <https://github.com/nichtich/ditaa-markdown>
+=head1 VERSION
 
-=end wikidoc
+version 0.2.4
+
+=head1 SYNOPSIS
+
+App-pandoc-preprocess E<sol> ppp lets use dotE<sol>ditaaE<sol>rdfdot in pandoc code blocks.
+
+B<Extremely> similar to E<lt>https:E<sol>E<sol>github.comE<sol>nichtichE<sol>ditaa-markdownE<gt>
+
+=head1 AUTHOR
+
+DBR <dbr@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2014 by DBR.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
