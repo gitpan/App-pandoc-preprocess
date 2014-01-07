@@ -2,7 +2,7 @@ NAME
     ppp - This is the executable to App::pandoc::preprocess
 
 VERSION
-    version 0.3.0
+    version 0.3.1
 
 SYNOPSIS
     App-pandoc-preprocess / ppp lets use dot/ditaa/rdfdot in pandoc code
