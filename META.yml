@@ -38,5 +38,5 @@ requires:
 resources:
   homepage: https://github.com/xdbr/p5-App-pandoc-preprocess
   repository: https://github.com/xdbr/p5-App-pandoc-preprocess.git
-version: 0.2.4
+version: 0.3.0
 x_authority: cpan:DBR

@@ -3,7 +3,7 @@ BEGIN {
   $App::pandoc::preprocess::File::AUTHORITY = 'cpan:DBR';
 }
 {
-  $App::pandoc::preprocess::File::VERSION = '0.2.4';
+  $App::pandoc::preprocess::File::VERSION = '0.3.0';
 }
 
 #  PODNAME: App::pandoc::preprocess::File
@@ -125,7 +125,7 @@ App::pandoc::preprocess::File - Internal class representing a file
 
 =head1 VERSION
 
-version 0.2.4
+version 0.3.0
 
 =head1 AUTHOR
 

@@ -3,7 +3,7 @@ BEGIN {
   $App::pandoc::preprocess::AUTHORITY = 'cpan:DBR';
 }
 {
-  $App::pandoc::preprocess::VERSION = '0.2.4';
+  $App::pandoc::preprocess::VERSION = '0.3.0';
 }
 
 #  PODNAME: App::pandoc::preprocess
@@ -20,6 +20,7 @@ use MooX::Types::MooseLike::Base qw| :all |;
 use Data::Printer;
 
 use App::pandoc::preprocess::File;
+use App::pandoc::preprocess::Checks;
 
 option inputfiles => (
   is => 'ro',
@@ -144,7 +145,7 @@ App::pandoc::preprocess - Preprocess Pandoc before Processing Pandoc
 
 =head1 VERSION
 
-version 0.2.4
+version 0.3.0
 
 =head1 AUTHOR
 
