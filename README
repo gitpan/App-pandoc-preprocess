@@ -2,12 +2,22 @@ NAME
     App::pandoc::preprocess - Preprocess Pandoc before Processing Pandoc
 
 VERSION
-    version 0.4.0
+    version 0.4.1
 
 ppp - pandoc pre-process
 USAGE
-    cat chapters/input-*.pandoc | ppp | pandoc -o output.pdf --smart "more
-    pandoc options..."
+         cat chapters/input-*.pandoc | ppp | pandoc -o output.pdf --smart [more pandoc options...]
+
+    Additionally see `etc/input.txt` for concrete examples.
+
+PREREQUISITES
+    *   dot/neato (neato is new!)
+
+    *   rdfdot
+
+    *   ditaa
+
+    *   Image::Magick (for downscaling of large images)
 
 BACKGROUND
     *   much simpler design than version 1: pipeable & chainable, reading

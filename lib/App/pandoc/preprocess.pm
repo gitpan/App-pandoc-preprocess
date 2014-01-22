@@ -3,7 +3,7 @@ BEGIN {
   $App::pandoc::preprocess::AUTHORITY = 'cpan:DBR';
 }
 {
-  $App::pandoc::preprocess::VERSION = '0.4.0';
+  $App::pandoc::preprocess::VERSION = '0.4.1';
 }
 
 #  PODNAME: App::pandoc::preprocess
@@ -19,13 +19,37 @@ App::pandoc::preprocess - Preprocess Pandoc before Processing Pandoc
 
 =head1 VERSION
 
-version 0.4.0
+version 0.4.1
 
 =head1 ppp - pandoc pre-process
 
 =head1 USAGE
 
-cat chaptersE<sol>input-*.pandoc E<verbar> ppp E<verbar> pandoc -o output.pdf --smart L<more pandoc options...>
+     cat chapters/input-*.pandoc | ppp | pandoc -o output.pdf --smart [more pandoc options...]
+
+Additionally see `etcE<sol>input.txt` for concrete examples.
+
+=head1 PREREQUISITES
+
+=over
+
+=item *
+
+dotE<sol>neato (neato is new!)
+
+=item *
+
+rdfdot
+
+=item *
+
+ditaa
+
+=item *
+
+Image::Magick (for downscaling of large images)
+
+=back
 
 =head1 BACKGROUND
 

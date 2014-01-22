@@ -5,7 +5,7 @@ BEGIN {
   $main::AUTHORITY = 'cpan:DBR';
 }
 {
-  $main::VERSION = '0.4.0';
+  $main::VERSION = '0.4.1';
 }
 
 #  PODNAME: ppp
@@ -93,7 +93,7 @@ ppp - Preprocess Pandoc before Processing Pandoc
 
 =head1 VERSION
 
-version 0.4.0
+version 0.4.1
 
 =head1 AUTHOR
 
