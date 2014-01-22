@@ -3,137 +3,11 @@ BEGIN {
   $App::pandoc::preprocess::AUTHORITY = 'cpan:DBR';
 }
 {
-  $App::pandoc::preprocess::VERSION = '0.3.1';
+  $App::pandoc::preprocess::VERSION = '0.4.0';
 }
 
 #  PODNAME: App::pandoc::preprocess
 # ABSTRACT: Preprocess Pandoc before Processing Pandoc
-
-use v5.14;
-use strict;
-use warnings;
-
-use Moo;
-use MooX::Options;
-use MooX::Types::MooseLike::Base qw| :all |;
-
-use Data::Printer;
-
-use App::pandoc::preprocess::File;
-use App::pandoc::preprocess::Checks;
-
-option inputfiles => (
-  is => 'ro',
-  isa => ArrayRef[Str],
-  # repeatable => 1,
-  required => 1,
-  format => 's@',
-);
-
-option output_directory => (
-  is => 'rw',
-  isa => Str,
-  format => 's',
-  default => sub { '.' },
-  doc => 'directory to write image files to',
-);
-
-option downscale_image => (
-  is => 'rw',
-  isa => Bool,
-  default => 1,
-  doc => 'downscale the image',
-);
-
-has encoding_check => (
-  is => 'ro',
-  isa => Num,
-  default => sub {
-    `grep -c file.encoding \$(which ditaa)` > 0 or die q{
-      Your ditaa executable
-        a) could not be found in your $PATH or
-        b) it lacks an option called '-Dfile.encoding=UTF-8' or
-        c) your\'re lacking java altogehter
-
-      Please add an executable called `ditaa` with the following content to your $PATH:
-        #!/bin/sh
-        java -Dfile.encoding=UTF-8 -jar /path/to/ditaa_XYZ.jar
-
-      Abort.
-    }
-  }
-);
-
-has preprocess_file => (
-  is => 'rw',
-  isa => Object #'App::pandoc::preprocess::File',
-);
-
-has matchers => (
-  is => 'ro',
-  isa => HashRef[RegexpRef],
-  default => sub {
-    +{
-      begin_of_line          => qr/^/sm,
-      codeblock_begin        => qr/~{4,}/sm,
-      codeblock_content      => qr/.*?/sm,
-      codeblock_end          => qr/~{4,}/sm,
-      format_specification   => qr/(?:dot|ditaa|rdfdot)/sm,
-      random_stuff_nongreedy => qr/.*?/sm,
-      possibly_spaces        => qr/\s*/sm,
-    }
-  }
-);
-
-has matcher => (
-  is => 'lazy',
-  isa => RegexpRef,
-);
-
-sub _build_matcher {
-  my $self = shift;
-  # This is a bit ugly, since we have to
-  # use the @{[]}-"tutle operator" everywhere...
-  my $qr =  qr/
-    (?<MATCH>
-      @{[$self->matchers->{codeblock_begin}]} @{[$self->matchers->{possibly_spaces}]} \{
-        @{[$self->matchers->{random_stuff_nongreedy}]}
-        \.(?<format> @{[$self->matchers->{format_specification}]} )
-        @{[$self->matchers->{random_stuff_nongreedy}]}
-      \}
-      @{[$self->matchers->{random_stuff_nongreedy}]}
-      (?<content> @{[$self->matchers->{codeblock_content}]} )
-      @{[$self->matchers->{codeblock_end}]}
-    )
-  /x;
-}
-
-sub slurp_file {
-  my $self = shift;
-  return $_ = do { local (@ARGV, $/) = @{$self->inputfiles}; <> };
-}
-
-sub generator { # needs to return the include line for pandoc
-  my $self = shift;
-  my ($format, $content) = @_;
-  my $file = App::pandoc::preprocess::File->new(
-    current_format => $format,
-    content => $content,
-    output_directory => $self->output_directory,
-    downscale_image => 1,
-  );
-  $file->current_image_include;
-}
-
-sub run {
-  my $self = shift;
-  $_ = $self->slurp_file;           # get (whole) STDIN/File(s) into $_
-  my $matcher = $self->matcher;     # $matcher will set $+{format} and $+{content}
-  s/$matcher/$self->generator( $+{format} => $+{content} )/posixgems; # transmute $_ and (as a side-effect) write image files
-  say $_                            # you will have to output modified $_ to STDOUT again
-}
-
-1;
 
 __END__
 
@@ -145,7 +19,74 @@ App::pandoc::preprocess - Preprocess Pandoc before Processing Pandoc
 
 =head1 VERSION
 
-version 0.3.1
+version 0.4.0
+
+=head1 ppp - pandoc pre-process
+
+=head1 USAGE
+
+cat chaptersE<sol>input-*.pandoc E<verbar> ppp E<verbar> pandoc -o output.pdf --smart L<more pandoc options...>
+
+=head1 BACKGROUND
+
+=over
+
+=item *
+
+much simpler design than version 1: pipeable & chainable, reading line-by-line
+
+=item *
+
+parallelized work on image file creation
+
+=back
+
+=head2 How it works
+
+1. while-loop will iterate line by line and is using the flip-flop-operator:
+
+     * as soon, as a ditaa/rdfdot/dot-block starts,
+       globals ($fileno, $outfile, etc) are set, so all other routines can see them
+     * when actually *inside* the block, the block's contents are printed
+       to the newly generated file (image-X.(ditaa/rdfdot/dot))
+
+2. once the flip-flop-operator hits the end of the ditaaE<sol>rdfdotE<sol>dot-block,
+a child will be spawned to take over the actual ditaaE<sol>rdfdotE<sol>dot-process
+to create the png-file and the globals are reset
+
+3. all other lines which are not part of a ditaaE<sol>rdfdotE<sol>dot-block will simply
+be piped through to stdout
+
+4. at the end of the program, all children are waited for
+
+5. in the meantime, the new pandoc contents are printed to stdout
+
+6. all child-processes will remain quiert as far as stdout is concerned and
+write to their individual log-files
+
+=head2 Todo
+
+=over
+
+=item *
+
+Captions
+
+=item *
+
+Checks whether ditaa... are available
+
+=item *
+
+check whether ditaa has file.encoding set
+
+=item *
+
+bundle ditaa with this
+
+=back
+
+'make CPAN happy -- we only have a main in bin/ppp'
 
 =head1 AUTHOR
 
@@ -153,9 +94,10 @@ DBR <dbr@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by DBR.
+This software is Copyright (c) 2014 by DBR.
 
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
+This is free software, licensed under:
+
+  DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE, Version 2, December 2004
 
 =cut

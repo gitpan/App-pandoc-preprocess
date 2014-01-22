@@ -17,16 +17,11 @@ my @modules = qw(
   FindBin
   List::Util
   Module::Build
-  Moo
-  MooX::Options
-  MooX::Types::MooseLike::Base
-  Path::Class
   Scalar::Util
   Test::CheckDeps
   Test::More
   Test::UseAllModules
   lib
-  namespace::clean
   perl
   strict
   warnings

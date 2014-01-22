@@ -1,17 +1,87 @@
 #!/usr/bin/env perl
 
+package main;
+BEGIN {
+  $main::AUTHORITY = 'cpan:DBR';
+}
+{
+  $main::VERSION = '0.4.0';
+}
+
 #  PODNAME: ppp
-# ABSTRACT: This is the executable to App::pandoc::preprocess
+# ABSTRACT: Preprocess Pandoc before Processing Pandoc
 
 use v5.14;
 use strict;
 use warnings;
+
 use FindBin;
+
 use lib "$FindBin::Bin/../lib";
 
-use App::pandoc::preprocess;
+use Data::Printer;
 
-App::pandoc::preprocess->new_with_options->run
+state $fileno = 0;
+state $outfile;
+state $format;
+state @children;
+
+BEGIN { die "No directory tmp/ available! Please create it" unless -d 'tmp/' }
+
+MAIN: {
+  while(<>) {
+    if ( (my $start = /^~{3,}\s*\{.*?(?<format>rdfdot|ditaa|dot|neato).*\}.*/) ... (my $end = /^~{3,}\s*$/) ) {
+        $start ? begin_ppp() : $end ? end_ppp() : print {$outfile} $_
+    } else {
+      print
+    }
+  }
+}
+
+SUBS: {
+  sub begin_ppp {
+    $fileno++;
+    $format = $+{format};
+    open $outfile, '>', "tmp/image-$fileno.$format"
+  }
+
+  sub end_ppp {
+    close $outfile;
+
+    if( my $child = fork == 0 ) {
+       push @children, $child;
+       $format =~ /^ditaa$/ and do {
+         system("ditaa tmp/image-$fileno.$format tmp/image-$fileno.png 2>&1 >>tmp/ditaa.log");
+       };
+       $format =~ /^rdfdot$/ and do {
+         system("rdfdot -ttl tmp/image-$fileno.$format tmp/image-$fileno.png 2>&1 >>tmp/rdfdot.log");
+         system("mogrify -scale 60% tmp/image-$fileno.png 2>&1 >>tmp/mogrify.log");
+       };
+       $format =~ /^dot$/ and do {
+         system("dot -Tpng -o tmp/image-$fileno.png tmp/image-$fileno.$format 2>&1 >>tmp/dot.log");
+         system("mogrify -scale 60% tmp/image-$fileno.png 2>&1 >>tmp/mogrify.log");
+       };
+       $format =~ /^neato$/ and do {
+         system("neato -Tpng -o tmp/image-$fileno.png tmp/image-$fileno.$format 2>&1 >>tmp/dot.log");
+         system("mogrify -scale 60% tmp/image-$fileno.png 2>&1 >>tmp/mogrify.log");
+       };
+       exit 0;
+    }
+
+    $format =~ /^ditaa$/  and say STDOUT "![Abbildung $fileno](tmp/image-$fileno.png)";
+    $format =~ /^rdfdot$/ and say STDOUT "![Abbildung $fileno](tmp/image-$fileno.png)";
+    $format =~ /^dot$/    and say STDOUT "![Abbildung $fileno](tmp/image-$fileno.png)";
+    $format =~ /^neato$/  and say STDOUT "![Abbildung $fileno](tmp/image-$fileno.png)";
+    $format = '';
+  }
+}
+
+END {
+  while (1) {
+    my $child = waitpid(-1, 0);
+    last if $child == -1;       # No more outstanding children
+  }
+}
 
 __END__
 
@@ -19,17 +89,11 @@ __END__
 
 =head1 NAME
 
-ppp - This is the executable to App::pandoc::preprocess
+ppp - Preprocess Pandoc before Processing Pandoc
 
 =head1 VERSION
 
-version 0.3.1
-
-=head1 SYNOPSIS
-
-App-pandoc-preprocess E<sol> ppp lets use dotE<sol>ditaaE<sol>rdfdot in pandoc code blocks.
-
-B<Extremely> similar to E<lt>https:E<sol>E<sol>github.comE<sol>nichtichE<sol>ditaa-markdownE<gt>
+version 0.4.0
 
 =head1 AUTHOR
 
@@ -37,9 +101,10 @@ DBR <dbr@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by DBR.
+This software is Copyright (c) 2014 by DBR.
 
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
+This is free software, licensed under:
+
+  DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE, Version 2, December 2004
 
 =cut

@@ -19,20 +19,15 @@ my %module_build_args = (
     "DBR <dbr\@cpan.org>"
   ],
   "dist_name" => "App-pandoc-preprocess",
-  "dist_version" => "0.3.1",
-  "license" => "perl",
+  "dist_version" => "0.4.0",
+  "license" => "unrestricted",
   "module_name" => "App::pandoc::preprocess",
   "recommends" => {},
   "recursive_test_files" => 1,
   "requires" => {
     "Data::Printer" => 0,
     "FindBin" => 0,
-    "Moo" => 0,
-    "MooX::Options" => 0,
-    "MooX::Types::MooseLike::Base" => 0,
-    "Path::Class" => 0,
     "lib" => 0,
-    "namespace::clean" => 0,
     "perl" => "v5.14.0",
     "strict" => 0,
     "warnings" => 0
