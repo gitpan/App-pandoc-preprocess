@@ -5,7 +5,7 @@ BEGIN {
   $main::AUTHORITY = 'cpan:DBR';
 }
 {
-  $main::VERSION = '0.5.0';
+  $main::VERSION = '0.6.1';
 }
 
 #  PODNAME: ppp
@@ -20,6 +20,7 @@ use FindBin;
 use lib "$FindBin::Bin/../lib";
 
 use Data::Printer;
+# use Smart::Comments;
 
 state $fileno = 0;
 state $outfile;
@@ -31,7 +32,7 @@ BEGIN { die "No directory tmp/ available! Please create it" unless -d 'tmp/' }
 
 MAIN: {
   while(<>) {
-    if ( (my $start = /^~{3,}\s*\{.*?(?<format>rdfdot|ditaa|dot|neato)(?<attributes>.*)\}.*/) ... (my $end = /^~{3,}\s*$/) ) {
+    if ( (my $start = /^~{3,}\s*\{.*?(?<format>rdfdot|ditaa|dot|neato|yuml)(?<attributes>.*)\}.*/) ... (my $end = /^~{3,}\s*$/) ) {
         $start ? begin_ppp() : $end ? end_ppp() : print {$outfile} $_
     } else {
       print
@@ -77,6 +78,18 @@ SUBS: {
          system("neato -Tpng -o tmp/image-$fileno.png tmp/image-$fileno.$format 2>&1 >>tmp/dot.log");
          system("mogrify -scale $attrs{scale} tmp/image-$fileno.png 2>&1 >>tmp/mogrify.log") if exists $attrs{scale};
        };
+       $format =~ /^yuml$/ and do {
+         my $cmd =
+           "./yuml " .
+           (exists $attrs{"type"}       ? "--type  @{[$attrs{type}      ]} ": ' ') .
+           (exists $attrs{"style"}      ? "--style @{[$attrs{style}     ]} ": ' ') .
+           (exists $attrs{"direction"}  ? "--dir   @{[$attrs{direction} ]} ": ' ') .
+           " --in tmp/image-$fileno.$format --out tmp/image-$fileno.png 2>&1 >>tmp/yuml.log"
+         ;
+         ### $cmd
+         system($cmd);
+         system("mogrify -scale $attrs{scale} tmp/image-$fileno.png 2>&1 >>tmp/mogrify.log") if exists $attrs{scale};
+       };
        exit 0;
     }
 
@@ -109,7 +122,7 @@ ppp - Preprocess Pandoc before Processing Pandoc
 
 =head1 VERSION
 
-version 0.5.0
+version 0.6.1
 
 =head1 AUTHOR
 

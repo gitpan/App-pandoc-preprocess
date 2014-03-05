@@ -2,7 +2,7 @@ NAME
     App::pandoc::preprocess - Preprocess Pandoc before Processing Pandoc
 
 VERSION
-    version 0.5.0
+    version 0.6.1
 
 ppp - pandoc pre-process
 USAGE
