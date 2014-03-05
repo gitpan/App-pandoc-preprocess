@@ -3,7 +3,7 @@ BEGIN {
   $App::pandoc::preprocess::AUTHORITY = 'cpan:DBR';
 }
 {
-  $App::pandoc::preprocess::VERSION = '0.6.3';
+  $App::pandoc::preprocess::VERSION = '0.6.5';
 }
 
 #  PODNAME: App::pandoc::preprocess
@@ -19,7 +19,7 @@ App::pandoc::preprocess - Preprocess Pandoc before Processing Pandoc
 
 =head1 VERSION
 
-version 0.6.3
+version 0.6.5
 
 =head1 ppp - pandoc pre-process
 

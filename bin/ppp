@@ -5,7 +5,7 @@ BEGIN {
   $main::AUTHORITY = 'cpan:DBR';
 }
 {
-  $main::VERSION = '0.6.3';
+  $main::VERSION = '0.6.5';
 }
 
 #  PODNAME: ppp
@@ -80,10 +80,10 @@ SUBS: {
        };
        $format =~ /^yuml$/ and do {
          my $cmd =
-           "./yuml " .
-           (exists $attrs{"type"}       ? "--type  @{[$attrs{type}      ]} ": ' ') .
-           (exists $attrs{"style"}      ? "--style @{[$attrs{style}     ]} ": ' ') .
-           (exists $attrs{"direction"}  ? "--dir   @{[$attrs{direction} ]} ": ' ') .
+           "yuml " .
+           (exists $attrs{"type"}       ? "--type  @{[$attrs{type}      ]} ": '--type=class ') .
+           (exists $attrs{"style"}      ? "--style @{[$attrs{style}     ]} ": '--style=boring ') .
+           (exists $attrs{"direction"}  ? "--dir   @{[$attrs{direction} ]} ": '--dir=LR ') .
            " --in tmp/image-$fileno.$format --out tmp/image-$fileno.png 2>&1 >>tmp/yuml.log"
          ;
          ### $cmd
@@ -122,7 +122,7 @@ ppp - Preprocess Pandoc before Processing Pandoc
 
 =head1 VERSION
 
-version 0.6.3
+version 0.6.5
 
 =head1 AUTHOR
 
