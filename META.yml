@@ -25,7 +25,7 @@ name: App-pandoc-preprocess
 provides:
   App::pandoc::preprocess:
     file: lib/App/pandoc/preprocess.pm
-    version: v0.6.5
+    version: v0.6.6
 requires:
   Data::Printer: 0
   FindBin: 0
@@ -36,5 +36,5 @@ requires:
 resources:
   homepage: https://github.com/xdbr/p5-App-pandoc-preprocess
   repository: https://github.com/xdbr/p5-App-pandoc-preprocess.git
-version: 0.6.5
+version: 0.6.6
 x_authority: cpan:DBR
