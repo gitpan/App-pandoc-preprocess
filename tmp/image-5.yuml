@@ -1,1 +1,3 @@
-["Customer"{bg:orange}]->[Order{bg:green}]
+[Customer] +1 ->        *[Order]
+[Order]   ++1 -items>   *[LineItem]
+[Order]  -0..1>     [PaymentMethod]

@@ -1,1 +1,4 @@
-[Company]<>-1>[Location], [Location]+->[Point]
+// Cool Use Case Diagram
+[Customer]-(Make Cup of Tea)
+(Make Cup of Tea)<(Add Milk)
+(Make Cup of Tea)>(Add Tea Bag)

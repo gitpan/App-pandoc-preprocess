@@ -32,6 +32,7 @@ tmp/image-1.ditaa
 tmp/image-1.png
 tmp/image-1.yuml
 tmp/image-10.png
+tmp/image-10.rdfdot
 tmp/image-10.yuml
 tmp/image-11.png
 tmp/image-11.yuml
@@ -72,13 +73,19 @@ tmp/image-6.yuml
 tmp/image-7.png
 tmp/image-7.rdfdot
 tmp/image-7.yuml
+tmp/image-8.plantuml
 tmp/image-8.png
 tmp/image-8.rdfdot
 tmp/image-8.yuml
+tmp/image-9.plantuml
 tmp/image-9.png
 tmp/image-9.yuml
 tmp/mogrify.log
+tmp/neato.log
+tmp/plantuml.log
 tmp/rdfdot.log
+tmp/tmp/image-8.png
+tmp/tmp/image-9.png
 tmp/yuml.log
 tmp2/ditaa.log
 tmp2/dot.log
