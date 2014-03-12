@@ -1897,3 +1897,25 @@ Done in 3sec
 Dialog
 Rendering to file: tmp/image-2.png
 Done in 4sec
+
+ditaa version 0.9, Copyright (C) 2004--2009  Efstathios (Stathis) Sideris
+
+ditaa version 0.9, Copyright (C) 2004--2009  Efstathios (Stathis) Sideris
+
+
+Running with options:
+round-corners
+no-shadows
+no-separation
+no-antialias
+Running with options:
+Reading file: tmp/image-1.ditaaReading file: tmp/image-2.ditaa
+
+Locale: en_US
+Locale: en_US
+Dialog
+Dialog
+Rendering to file: tmp/image-1.png
+Rendering to file: tmp/image-2.png
+Done in 2sec
+Done in 2sec
