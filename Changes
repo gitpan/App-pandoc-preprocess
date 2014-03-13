@@ -1,3 +1,7 @@
+0.7.2     2014-03-13 10:50:49 Europe/Berlin
+  
+  - update documentation
+
 0.7.1     2014-03-12 23:55:30 Europe/Berlin
 
   - errors branching: bump release: (finally) add plantuml as renderer

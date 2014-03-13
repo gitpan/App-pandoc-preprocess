@@ -20,6 +20,7 @@ image-2.png
 image-3.png
 image-3.rdfdot
 lib/App/pandoc/preprocess.pm
+ppp-Documentation.html
 ppp-Documentation.pandoc
 ppp-Documentation.pdf
 t/00-check-deps.t

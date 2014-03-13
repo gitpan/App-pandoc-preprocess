@@ -19,7 +19,7 @@ my %module_build_args = (
     "DBR <dbr\@cpan.org>"
   ],
   "dist_name" => "App-pandoc-preprocess",
-  "dist_version" => "0.7.1",
+  "dist_version" => "0.7.2",
   "license" => "unrestricted",
   "module_name" => "App::pandoc::preprocess",
   "recommends" => {},
