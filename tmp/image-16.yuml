@@ -1,2 +1,0 @@
-[<<User>>;Abstract]^-.-[User|+Forename;+Surname;+HashedPassword;-Salt|+Login();+Logout()]
-[User]uses -.->[Response]

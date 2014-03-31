@@ -1,0 +1,35 @@
+
+ditaa version 0.9, Copyright (C) 2004--2009  Efstathios (Stathis) Sideris
+
+
+ditaa version 0.9, Copyright (C) 2004--2009  Efstathios (Stathis) Sideris
+
+
+ditaa version 0.9, Copyright (C) 2004--2009  Efstathios (Stathis) Sideris
+
+Running with options:
+round-corners
+no-shadows
+no-separation
+no-antialias
+Reading file: tmp/ppp-render-816xh/image-1.ditaa
+Running with options:
+Reading file: tmp/ppp-render-816xh/image-3.ditaa
+Running with options:
+round-corners
+no-shadows
+no-separation
+no-antialias
+Reading file: tmp/ppp-render-816xh/image-2.ditaa
+Locale: en_US
+Locale: en_US
+Locale: en_US
+Dialog
+Rendering to file: tmp/ppp-render-816xh/image-1.png
+Dialog
+Done in 3sec
+Rendering to file: tmp/ppp-render-816xh/image-3.png
+Dialog
+Done in 4sec
+Rendering to file: tmp/ppp-render-816xh/image-2.png
+Done in 4sec

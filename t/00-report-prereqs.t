@@ -11,17 +11,14 @@ use List::Util qw/max/;
 
 my @modules = qw(
   Carp
-  Data::Printer
   ExtUtils::MakeMaker
   File::Spec::Functions
-  FindBin
   List::Util
   Module::Build
   Scalar::Util
   Test::CheckDeps
   Test::More
   Test::UseAllModules
-  lib
   perl
   strict
   warnings
