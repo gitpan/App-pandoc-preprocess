@@ -19,12 +19,19 @@ my %module_build_args = (
     "DBR <dbr\@cpan.org>"
   ],
   "dist_name" => "App-pandoc-preprocess",
-  "dist_version" => "0.9.0",
+  "dist_version" => "0.9.4",
   "license" => "unrestricted",
   "module_name" => "App::pandoc::preprocess",
   "recommends" => {},
   "recursive_test_files" => 1,
-  "requires" => {},
+  "requires" => {
+    "File::Path" => 0,
+    "File::Spec" => 0,
+    "File::Temp" => 0,
+    "perl" => "v5.14.0",
+    "strict" => 0,
+    "warnings" => 0
+  },
   "script_files" => [
     "bin/ppp",
     "bin/ppp"
@@ -37,10 +44,7 @@ my %module_build_args = (
     "Scalar::Util" => 0,
     "Test::CheckDeps" => "0.006",
     "Test::More" => "0.94",
-    "Test::UseAllModules" => 0,
-    "perl" => "5.004",
-    "strict" => 0,
-    "warnings" => 0
+    "Test::UseAllModules" => 0
   }
 );
 
@@ -54,10 +58,7 @@ my %fallback_build_requires = (
   "Scalar::Util" => 0,
   "Test::CheckDeps" => "0.006",
   "Test::More" => "0.94",
-  "Test::UseAllModules" => 0,
-  "perl" => "5.004",
-  "strict" => 0,
-  "warnings" => 0
+  "Test::UseAllModules" => 0
 );
 
 

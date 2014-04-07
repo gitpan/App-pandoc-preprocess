@@ -12,7 +12,10 @@ use List::Util qw/max/;
 my @modules = qw(
   Carp
   ExtUtils::MakeMaker
+  File::Path
+  File::Spec
   File::Spec::Functions
+  File::Temp
   List::Util
   Module::Build
   Scalar::Util

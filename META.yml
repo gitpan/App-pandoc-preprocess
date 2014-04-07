@@ -12,9 +12,6 @@ build_requires:
   Test::CheckDeps: 0.006
   Test::More: 0.94
   Test::UseAllModules: 0
-  perl: 5.004
-  strict: 0
-  warnings: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
   Module::Build: 0.3601
@@ -28,9 +25,16 @@ name: App-pandoc-preprocess
 provides:
   App::pandoc::preprocess:
     file: lib/App/pandoc/preprocess.pm
-    version: v0.9.0
+    version: v0.9.4
+requires:
+  File::Path: 0
+  File::Spec: 0
+  File::Temp: 0
+  perl: v5.14.0
+  strict: 0
+  warnings: 0
 resources:
   homepage: https://github.com/xdbr/p5-App-pandoc-preprocess
   repository: https://github.com/xdbr/p5-App-pandoc-preprocess.git
-version: 0.9.0
+version: 0.9.4
 x_authority: cpan:DBR

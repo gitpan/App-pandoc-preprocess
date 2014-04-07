@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.20)  31 MAR 2014 23:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.20)  7 APR 2014 17:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -922,20 +922,20 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Warning: Reference `fig:pipeline-overview' on page 6 undefined on input l
 ine 182.
 
-<tmp/ppp-render-_6_eB/image-1.png, id=196, 659.46375pt x 164.615pt>
-File: tmp/ppp-render-_6_eB/image-1.png Graphic file (type png)
+</Users/dbruder/tmp/neWhvWwbA7/image-1.png, id=196, 659.46375pt x 164.615pt>
+File: /Users/dbruder/tmp/neWhvWwbA7/image-1.png Graphic file (type png)
 
-<use tmp/ppp-render-_6_eB/image-1.png>
-Package pdftex.def Info: tmp/ppp-render-_6_eB/image-1.png used on input line 20
-8.
+<use /Users/dbruder/tmp/neWhvWwbA7/image-1.png>
+Package pdftex.def Info: /Users/dbruder/tmp/neWhvWwbA7/image-1.png used on inpu
+t line 208.
 (pdftex.def)             Requested size: 345.0pt x 86.12022pt.
 
-<tmp/ppp-render-_6_eB/image-2.png, id=197, 732.7375pt x 182.6825pt>
-File: tmp/ppp-render-_6_eB/image-2.png Graphic file (type png)
+</Users/dbruder/tmp/neWhvWwbA7/image-2.png, id=197, 732.7375pt x 182.6825pt>
+File: /Users/dbruder/tmp/neWhvWwbA7/image-2.png Graphic file (type png)
 
-<use tmp/ppp-render-_6_eB/image-2.png>
-Package pdftex.def Info: tmp/ppp-render-_6_eB/image-2.png used on input line 21
-4.
+<use /Users/dbruder/tmp/neWhvWwbA7/image-2.png>
+Package pdftex.def Info: /Users/dbruder/tmp/neWhvWwbA7/image-2.png used on inpu
+t line 214.
 (pdftex.def)             Requested size: 345.0pt x 86.01408pt.
 
 Overfull \hbox (10.51074pt too wide) in paragraph at lines 235--235
@@ -943,58 +943,59 @@ Overfull \hbox (10.51074pt too wide) in paragraph at lines 235--235
 2" .label=fig:pipeline-overview-2}[] 
  []
 
-[6 <./tmp/ppp-render-_6_eB/image-1.png>]
-<tmp/ppp-render-_6_eB/image-3.png, id=208, 659.46375pt x 164.615pt>
-File: tmp/ppp-render-_6_eB/image-3.png Graphic file (type png)
+[6 </Users/dbruder/tmp/neWhvWwbA7/image-1.png>]
+</Users/dbruder/tmp/neWhvWwbA7/image-3.png, id=208, 659.46375pt x 164.615pt>
+File: /Users/dbruder/tmp/neWhvWwbA7/image-3.png Graphic file (type png)
 
-<use tmp/ppp-render-_6_eB/image-3.png>
-Package pdftex.def Info: tmp/ppp-render-_6_eB/image-3.png used on input line 24
-1.
+<use /Users/dbruder/tmp/neWhvWwbA7/image-3.png>
+Package pdftex.def Info: /Users/dbruder/tmp/neWhvWwbA7/image-3.png used on inpu
+t line 241.
 (pdftex.def)             Requested size: 345.0pt x 86.12022pt.
- [7 <./tmp/ppp-render-_6_eB/image-2.png> <./tmp/ppp-render-_6_eB/image-3.png>]
-<tmp/ppp-render-_6_eB/image-4.png, id=221, 460.72125pt x 202.7575pt>
-File: tmp/ppp-render-_6_eB/image-4.png Graphic file (type png)
+ [7 </Users/dbruder/tmp/neWhvWwbA7/image-2.png> </Users/dbruder/tmp/neWhvWwbA7/
+image-3.png>]
+</Users/dbruder/tmp/neWhvWwbA7/image-4.png, id=221, 460.72125pt x 202.7575pt>
+File: /Users/dbruder/tmp/neWhvWwbA7/image-4.png Graphic file (type png)
 
-<use tmp/ppp-render-_6_eB/image-4.png>
-Package pdftex.def Info: tmp/ppp-render-_6_eB/image-4.png used on input line 30
-1.
+<use /Users/dbruder/tmp/neWhvWwbA7/image-4.png>
+Package pdftex.def Info: /Users/dbruder/tmp/neWhvWwbA7/image-4.png used on inpu
+t line 301.
 (pdftex.def)             Requested size: 345.0pt x 151.82951pt.
  [8]
-<tmp/ppp-render-_6_eB/image-5.png, id=235, 156.585pt x 134.5025pt>
-File: tmp/ppp-render-_6_eB/image-5.png Graphic file (type png)
+</Users/dbruder/tmp/neWhvWwbA7/image-5.png, id=235, 156.585pt x 134.5025pt>
+File: /Users/dbruder/tmp/neWhvWwbA7/image-5.png Graphic file (type png)
 
-<use tmp/ppp-render-_6_eB/image-5.png>
-Package pdftex.def Info: tmp/ppp-render-_6_eB/image-5.png used on input line 34
-1.
+<use /Users/dbruder/tmp/neWhvWwbA7/image-5.png>
+Package pdftex.def Info: /Users/dbruder/tmp/neWhvWwbA7/image-5.png used on inpu
+t line 341.
 (pdftex.def)             Requested size: 156.58461pt x 134.50626pt.
- [9 <./tmp/ppp-render-_6_eB/image-4.png>]
+ [9 </Users/dbruder/tmp/neWhvWwbA7/image-4.png>]
 Overfull \hbox (103.48125pt too wide) in paragraph at lines 387--387
 []\T1/lmtt/m/n/7 ~~~~ {.yuml .style=nofunky .type=class .direction=LR .scale=10
 0% .title=yUML class diagram .label=fig:yuml-class-diagram}[] 
  []
 
-<tmp/ppp-render-_6_eB/image-6.png, id=243, 620.3175pt x 148.555pt>
-File: tmp/ppp-render-_6_eB/image-6.png Graphic file (type png)
+</Users/dbruder/tmp/neWhvWwbA7/image-6.png, id=243, 620.3175pt x 148.555pt>
+File: /Users/dbruder/tmp/neWhvWwbA7/image-6.png Graphic file (type png)
 
-<use tmp/ppp-render-_6_eB/image-6.png>
-Package pdftex.def Info: tmp/ppp-render-_6_eB/image-6.png used on input line 39
-3.
+<use /Users/dbruder/tmp/neWhvWwbA7/image-6.png>
+Package pdftex.def Info: /Users/dbruder/tmp/neWhvWwbA7/image-6.png used on inpu
+t line 393.
 (pdftex.def)             Requested size: 345.0pt x 82.62126pt.
- [10 <./tmp/ppp-render-_6_eB/image-5.png>]
+ [10 </Users/dbruder/tmp/neWhvWwbA7/image-5.png>]
 Overfull \hbox (29.10625pt too wide) in paragraph at lines 413--413
 []\T1/lmtt/m/n/7 ~~~~ {.yuml .style=scruffy .type=usecase .title=yUML usecase d
 iagram .label=fig:yuml-usecase-diagram}[] 
  []
 
-<tmp/ppp-render-_6_eB/image-7.png, id=250, 725.71124pt x 228.855pt>
-File: tmp/ppp-render-_6_eB/image-7.png Graphic file (type png)
+</Users/dbruder/tmp/neWhvWwbA7/image-7.png, id=250, 725.71124pt x 228.855pt>
+File: /Users/dbruder/tmp/neWhvWwbA7/image-7.png Graphic file (type png)
 
-<use tmp/ppp-render-_6_eB/image-7.png>
-Package pdftex.def Info: tmp/ppp-render-_6_eB/image-7.png used on input line 41
-9.
+<use /Users/dbruder/tmp/neWhvWwbA7/image-7.png>
+Package pdftex.def Info: /Users/dbruder/tmp/neWhvWwbA7/image-7.png used on inpu
+t line 419.
 (pdftex.def)             Requested size: 345.0pt x 108.79803pt.
- [11 <./tmp/ppp-render-_6_eB/image-6.png> <./tmp/ppp-render-_6_eB/image-7.png>]
-
+ [11 </Users/dbruder/tmp/neWhvWwbA7/image-6.png> </Users/dbruder/tmp/neWhvWwbA7
+/image-7.png>]
 Overfull \hbox (32.825pt too wide) in paragraph at lines 436--436
 []\T1/lmtt/m/n/7 ~~~~ {.yuml .style=plain .type=activity .title=yUML activity D
 iagram .label=fig:yuml-activity-diagram}[] 
@@ -1006,38 +1007,38 @@ Overfull \hbox (126.16563pt too wide) in paragraph at lines 436--436
 |,|b|-><c>[want more coffee]->(Make Coffee),<c>[satisfied]->(end)[] 
  []
 
-<tmp/ppp-render-_6_eB/image-8.png, id=258, 471.7625pt x 138.5175pt>
-File: tmp/ppp-render-_6_eB/image-8.png Graphic file (type png)
+</Users/dbruder/tmp/neWhvWwbA7/image-8.png, id=258, 471.7625pt x 138.5175pt>
+File: /Users/dbruder/tmp/neWhvWwbA7/image-8.png Graphic file (type png)
 
-<use tmp/ppp-render-_6_eB/image-8.png>
-Package pdftex.def Info: tmp/ppp-render-_6_eB/image-8.png used on input line 44
-2.
+<use /Users/dbruder/tmp/neWhvWwbA7/image-8.png>
+Package pdftex.def Info: /Users/dbruder/tmp/neWhvWwbA7/image-8.png used on inpu
+t line 442.
 (pdftex.def)             Requested size: 345.0pt x 101.29869pt.
- [12 <./tmp/ppp-render-_6_eB/image-8.png>] <tmp/ppp-render-_6_eB/image-9.png, i
-d=264, 256.96pt x 423.5825pt>
-File: tmp/ppp-render-_6_eB/image-9.png Graphic file (type png)
+ [12 </Users/dbruder/tmp/neWhvWwbA7/image-8.png>]
+</Users/dbruder/tmp/neWhvWwbA7/image-9.png, id=264, 256.96pt x 423.5825pt>
+File: /Users/dbruder/tmp/neWhvWwbA7/image-9.png Graphic file (type png)
 
-<use tmp/ppp-render-_6_eB/image-9.png>
-Package pdftex.def Info: tmp/ppp-render-_6_eB/image-9.png used on input line 50
-2.
+<use /Users/dbruder/tmp/neWhvWwbA7/image-9.png>
+Package pdftex.def Info: /Users/dbruder/tmp/neWhvWwbA7/image-9.png used on inpu
+t line 502.
 (pdftex.def)             Requested size: 256.95937pt x 423.61377pt.
- [13] [14 <./tmp/ppp-render-_6_eB/image-9.png>] <tmp/ppp-render-_6_eB/image-10.
-png, id=277, 590.205pt x 547.04375pt>
-File: tmp/ppp-render-_6_eB/image-10.png Graphic file (type png)
+ [13] [14 </Users/dbruder/tmp/neWhvWwbA7/image-9.png>]
+</Users/dbruder/tmp/neWhvWwbA7/image-10.png, id=277, 590.205pt x 547.04375pt>
+File: /Users/dbruder/tmp/neWhvWwbA7/image-10.png Graphic file (type png)
 
-<use tmp/ppp-render-_6_eB/image-10.png>
-Package pdftex.def Info: tmp/ppp-render-_6_eB/image-10.png used on input line 5
-52.
+<use /Users/dbruder/tmp/neWhvWwbA7/image-10.png>
+Package pdftex.def Info: /Users/dbruder/tmp/neWhvWwbA7/image-10.png used on inp
+ut line 552.
 (pdftex.def)             Requested size: 345.0pt x 319.77306pt.
- [15] [16 <./tmp/ppp-render-_6_eB/image-10.png>] [17]
-<tmp/ppp-render-_6_eB/image-11.png, id=296, 307.1475pt x 406.51875pt>
-File: tmp/ppp-render-_6_eB/image-11.png Graphic file (type png)
+ [15] [16 </Users/dbruder/tmp/neWhvWwbA7/image-10.png>] [17]
+</Users/dbruder/tmp/neWhvWwbA7/image-11.png, id=296, 307.1475pt x 406.51875pt>
+File: /Users/dbruder/tmp/neWhvWwbA7/image-11.png Graphic file (type png)
 
-<use tmp/ppp-render-_6_eB/image-11.png>
-Package pdftex.def Info: tmp/ppp-render-_6_eB/image-11.png used on input line 5
-93.
+<use /Users/dbruder/tmp/neWhvWwbA7/image-11.png>
+Package pdftex.def Info: /Users/dbruder/tmp/neWhvWwbA7/image-11.png used on inp
+ut line 593.
 (pdftex.def)             Requested size: 307.14674pt x 406.54256pt.
- [18] [19 <./tmp/ppp-render-_6_eB/image-11.png>] [20]
+ [18] [19 </Users/dbruder/tmp/neWhvWwbA7/image-11.png>] [20]
 Overfull \hbox (187.23578pt too wide) in paragraph at lines 794--798
 [][][]$\T1/lmr/m/n/10 (-20) http : / / randomdeterminism . wordpress . com / 20
 12 / 06 / 01 / how-[]i-[]stopped-[]worring-[]and-[]started-[]using-[]markdown-[
@@ -1064,7 +1065,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 808.
  ) 
 Here is how much of TeX's memory you used:
  12056 strings out of 493315
- 175747 string characters out of 6137904
+ 176152 string characters out of 6137904
  269657 words of memory out of 5000000
  15203 multiletter control sequences out of 15000+600000
  60406 words of font info for 80 fonts, out of 8000000 for 9000
@@ -1081,7 +1082,7 @@ al/texlive/2013/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive
 /2013/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2013/texm
 f-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2013/texmf-dist/font
 s/type1/public/lm/lmtti10.pfb>
-Output written on ppp-Documentation.pdf (22 pages, 404559 bytes).
+Output written on ppp-Documentation.pdf (22 pages, 404823 bytes).
 PDF statistics:
  401 PDF objects out of 1000 (max. 8388607)
  342 compressed objects within 4 object streams

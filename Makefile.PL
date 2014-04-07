@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-
+use 5.014000;
 
 use ExtUtils::MakeMaker 6.30;
 
@@ -26,7 +26,13 @@ my %WriteMakefileArgs = (
   ],
   "LICENSE" => "unrestricted",
   "NAME" => "App::pandoc::preprocess",
-  "PREREQ_PM" => {},
+  "PREREQ_PM" => {
+    "File::Path" => 0,
+    "File::Spec" => 0,
+    "File::Temp" => 0,
+    "strict" => 0,
+    "warnings" => 0
+  },
   "TEST_REQUIRES" => {
     "Carp" => 0,
     "ExtUtils::MakeMaker" => 0,
@@ -35,11 +41,9 @@ my %WriteMakefileArgs = (
     "Scalar::Util" => 0,
     "Test::CheckDeps" => "0.006",
     "Test::More" => "0.94",
-    "Test::UseAllModules" => 0,
-    "strict" => 0,
-    "warnings" => 0
+    "Test::UseAllModules" => 0
   },
-  "VERSION" => "0.9.0",
+  "VERSION" => "0.9.4",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -49,7 +53,10 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "Carp" => 0,
   "ExtUtils::MakeMaker" => 0,
+  "File::Path" => 0,
+  "File::Spec" => 0,
   "File::Spec::Functions" => 0,
+  "File::Temp" => 0,
   "List::Util" => 0,
   "Module::Build" => "0.3601",
   "Scalar::Util" => 0,
