@@ -1,17 +1,19 @@
 package App::pandoc::preprocess;
 BEGIN {
-  $App::pandoc::preprocess::AUTHORITY = 'cpan:DBR';
+  $App::pandoc::preprocess::AUTHORITY = 'cpan:VOJ';
 }
-{
-  $App::pandoc::preprocess::VERSION = '0.9.4';
-}
-
+$App::pandoc::preprocess::VERSION = '0.9.5';
 #  PODNAME: App::pandoc::preprocess
 # ABSTRACT: Preprocess Pandoc before Processing Pandoc
+
+
+'make CPAN happy -- we only have a main in bin/ppp'
 
 __END__
 
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
@@ -19,7 +21,7 @@ App::pandoc::preprocess - Preprocess Pandoc before Processing Pandoc
 
 =head1 VERSION
 
-version 0.9.4
+version 0.9.5
 
 =head1 ppp - pandoc pre-process
 
@@ -109,8 +111,6 @@ check whether ditaa has file.encoding set
 bundle ditaa with this
 
 =back
-
-'make CPAN happy -- we only have a main in bin/ppp'
 
 =head1 AUTHOR
 

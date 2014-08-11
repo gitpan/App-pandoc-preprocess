@@ -2,7 +2,7 @@ NAME
     App::pandoc::preprocess - Preprocess Pandoc before Processing Pandoc
 
 VERSION
-    version 0.9.4
+    version 0.9.5
 
 ppp - pandoc pre-process
 USAGE
@@ -57,8 +57,6 @@ BACKGROUND
     *   check whether ditaa has file.encoding set
 
     *   bundle ditaa with this
-
-    'make CPAN happy -- we only have a main in bin/ppp'
 
 AUTHOR
     DBR <dbr@cpan.org>

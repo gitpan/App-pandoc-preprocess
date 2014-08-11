@@ -3,38 +3,37 @@ abstract: 'Preprocess Pandoc before Processing Pandoc'
 author:
   - 'DBR <dbr@cpan.org>'
 build_requires:
-  Carp: 0
-  ExtUtils::MakeMaker: 0
-  File::Spec::Functions: 0
-  List::Util: 0
-  Module::Build: 0.3601
-  Scalar::Util: 0
-  Test::CheckDeps: 0.006
-  Test::More: 0.94
-  Test::UseAllModules: 0
+  Carp: '0'
+  ExtUtils::MakeMaker: '0'
+  File::Spec: '0'
+  Module::Build: '0.3601'
+  Scalar::Util: '0'
+  Test::CheckDeps: '0.010'
+  Test::More: '0.94'
+  Test::UseAllModules: '0'
 configure_requires:
-  ExtUtils::MakeMaker: 6.30
-  Module::Build: 0.3601
+  ExtUtils::MakeMaker: '6.30'
+  Module::Build: '0.3601'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.008, CPAN::Meta::Converter version 2.133380'
+generated_by: 'Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.141520'
 license: unrestricted
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: App-pandoc-preprocess
 provides:
   App::pandoc::preprocess:
     file: lib/App/pandoc/preprocess.pm
-    version: v0.9.4
+    version: v0.9.5
 requires:
-  File::Path: 0
-  File::Spec: 0
-  File::Temp: 0
+  File::Path: '0'
+  File::Spec: '0'
+  File::Temp: '0'
   perl: v5.14.0
-  strict: 0
-  warnings: 0
+  strict: '0'
+  warnings: '0'
 resources:
-  homepage: https://github.com/xdbr/p5-App-pandoc-preprocess
-  repository: https://github.com/xdbr/p5-App-pandoc-preprocess.git
-version: 0.9.4
-x_authority: cpan:DBR
+  homepage: https://github.com/typesetters/p5-App-pandoc-preprocess
+  repository: https://github.com/typesetters/p5-App-pandoc-preprocess.git
+version: 0.9.5
+x_authority: cpan:VOJ
